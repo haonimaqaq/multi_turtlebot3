@@ -5,7 +5,10 @@
 
   <link name="base_footprint"/>
 
-
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="base_link" name="velodyne" topic="velodyne_points" hz="10" samples="1024" gpu="true" lasers="16" max_range="15">
+        <origin xyz="-0.064 0.0 0.50" rpy="0 0 0" />
+  </VLP-16>
 
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
